@@ -133,6 +133,7 @@ function runMonteCarloSim(id, settings) {
         cp: finalState.cpState,
         progress: finalState.progressState,
         successPercent: mcSimResult.successPercent,
+        variabilityPercent: finalState.variability * 100,
         hqPercent: hqPercentFromQuality(finalState.qualityState / settings.recipe.maxQuality * 100),
         feasible: violations.progressOk && violations.durabilityOk && violations.cpOk && violations.trickOk && violations.reliabilityOk,
         violations: violations,

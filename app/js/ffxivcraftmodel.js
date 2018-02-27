@@ -162,7 +162,7 @@ function EffectTracker() {
     this.indefinites = {};
 }
 
-function State(synth, step, lastStep, action, durabilityState, cpState, bonusMaxCp, qualityState, progressState, wastedActions, trickUses, nameOfElementUses, reliability, crossClassActionList, effects, condition) {
+function State(synth, step, lastStep, action, durabilityState, cpState, bonusMaxCp, qualityState, progressState, wastedActions, trickUses, nameOfElementUses, reliability, variability, crossClassActionList, effects, condition) {
     this.synth = synth;
     this.step = step;
     this.lastStep = lastStep;
@@ -176,6 +176,7 @@ function State(synth, step, lastStep, action, durabilityState, cpState, bonusMax
     this.trickUses = trickUses;
     this.nameOfElementUses = nameOfElementUses;
     this.reliability = reliability;
+    this.variability = variability;
     if (crossClassActionList === null) {
         this.crossClassActionList = {};
     }
@@ -184,11 +185,10 @@ function State(synth, step, lastStep, action, durabilityState, cpState, bonusMax
     }
     this.effects = effects;
     this.condition =  condition;
-
 }
 
 State.prototype.clone = function () {
-    return new State(this.synth, this.step, this.lastStep, this.action, this.durabilityState, this.cpState, this.bonusMaxCp, this.qualityState, this.progressState, this.wastedActions, this.trickUses, this.nameOfElementUses, this.reliability, clone(this.crossClassActionList), clone(this.effects), this.condition);
+    return new State(this.synth, this.step, this.lastStep, this.action, this.durabilityState, this.cpState, this.bonusMaxCp, this.qualityState, this.progressState, this.wastedActions, this.trickUses, this.nameOfElementUses, this.reliability, this.variability, clone(this.crossClassActionList), clone(this.effects), this.condition);
 };
 
 State.prototype.checkViolations = function () {
@@ -241,11 +241,12 @@ function NewStateFromSynth(synth) {
     var trickUses = 0;
     var nameOfElementUses = 0;
     var reliability = 1;
+    var variability = 1;
     var crossClassActionList = {};
     var effects = new EffectTracker();
     var condition = 'Normal';
 
-    return new State(synth, step, lastStep, '', durabilityState, cpState, bonusMaxCp, qualityState, progressState, wastedActions, trickUses, nameOfElementUses, reliability, crossClassActionList, effects, condition);
+    return new State(synth, step, lastStep, '', durabilityState, cpState, bonusMaxCp, qualityState, progressState, wastedActions, trickUses, nameOfElementUses, reliability, variability, crossClassActionList, effects, condition);
 }
 
 function probGoodForSynth(synth) {
@@ -903,6 +904,8 @@ function simSynth(individual, startState, assumeSuccess, verbose, debug, logOutp
             s.reliability = s.reliability * successProbability;
         }
 
+        s.variability = s.variability * r.successProbability;
+
         var qualityGain = condQualityIncreaseMultiplier * r.bQualityGain;
 
         // Floor gains at final stage before calculating expected value
@@ -1069,6 +1072,8 @@ function MonteCarloStep(startState, action, assumeSuccess, verbose, debug, logOu
     // Floor gains at final stage before calculating expected value
     progressGain = Math.floor(progressGain);
     qualityGain = Math.floor(qualityGain);
+
+    s.variability = s.variability * r.successProbability;
 
     // Occur if a dummy action
     //==================================

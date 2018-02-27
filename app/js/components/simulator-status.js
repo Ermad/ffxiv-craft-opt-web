@@ -98,6 +98,7 @@
       $scope.cpPercent = Math.min(100, $scope.cp / $scope.maxCp * 100);
 
       $scope.hqPercent = $scope.status.state && $scope.status.state.hqPercent || 0;
+      $scope.variabilityPercent = $scope.status.state && $scope.status.state.variabilityPercent || 0;
       $scope.successPercent = $scope.status.state && $scope.status.state.successPercent || 0;
 
     }

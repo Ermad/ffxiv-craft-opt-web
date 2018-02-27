@@ -1,5 +1,5 @@
 <div class="simulator-status row-fluid">
-  <div class="synth-status span6">
+  <div class="synth-status span8">
     <div class="title">
       L{{stats.level}} {{recipe.cls}}
       <span ng-if="stats.specialist">&nbsp;<small>(Specialist)</small></span>
@@ -37,20 +37,21 @@
     <hr/>
     <table>
       <tr class="narrow">
-        <td>
-          <span class="stats-label">Durability</span> {{durability}}&nbsp;/&nbsp;{{recipe.durability}}&emsp;
+        <td style="width: 40%">
+          <span class="stats-label">Durability</span> {{durability}}&nbsp;/&nbsp;{{recipe.durability}}
         </td>
-        <td>
-          <span class="stats-label">HQ</span>&nbsp;{{hqPercent}}%&emsp;
+        <td style="width: 20%; text-align: center">
+          <span class="stats-label">HQ</span>&nbsp;{{hqPercent}}%
         </td>
-        <td class="align-right">
+        <td class="align-right" style="width: 40%">
+          <span class="stats-label">Total Success</span>&nbsp;{{variabilityPercent | number: 0}}% &nbsp;
           <span class="stats-label">Reliability</span>&nbsp;{{successPercent | number: 0}}%
         </td>
       </tr>
     </table>
   </div>
 
-  <div class="bonus-stats span6">
+  <div class="bonus-stats span4">
     <div class="title">
       Attributes
       <a ui-sref="crafter-attributes"><small><i class="fa fa-edit"></i></small></a>
