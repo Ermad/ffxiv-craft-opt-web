@@ -101,7 +101,19 @@ function runMonteCarloSim(id, settings) {
 
   var logOutput = new LogOutput();
 
-  logOutput.write('Seed: %d, Use Conditions: %s\n\n'.sprintf(sim.seed, sim.synth.useConditions));
+  logOutput.write('Seed: %d, Use Conditions: %s\n'.sprintf(sim.seed, sim.synth.useConditions));
+  logOutput.write('Recipe: L%d %dD %d/%d, Class: L%d %s, Specialist: %s, Craftsmanship: %d, Control: %d, CP: %d\n\n'.sprintf(
+    sim.synth.recipe.level,
+    sim.synth.recipe.durability,
+    sim.synth.recipe.difficulty,
+    sim.synth.recipe.maxQuality,
+    sim.synth.crafter.level,
+    sim.synth.crafter.cls,
+    !!sim.synth.crafter.specialist,
+    sim.synth.crafter.craftsmanship,
+    sim.synth.crafter.control,
+    sim.synth.crafter.craftPoints
+  ));
 
   logOutput.write("Monte Carlo Example\n");
   logOutput.write("===================\n");
