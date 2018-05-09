@@ -71,9 +71,9 @@ var AllActions = {
     whistle: new Action(            'whistle',           'Whistle While You Work',   0,     36,  1.0, 0.0, 0.0, 'countdown',  11,  'All',          55),
     satisfaction: new Action(       'satisfaction',         'Satisfaction',          0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          55),
     innovativeTouch: new Action(    'innovativeTouch',      'Innovative Touch',     10,      8,  0.4, 1.0, 0.0, 'immediate',   1,  'All',          56),
-    nymeiasWheel: new Action(       'nymeiasWheel',         'Nymeia\'s Wheel',       0,     18,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          54),
+    nymeiasWheel: new Action(       'nymeiasWheel',         'Nymeia\'s Wheel',       0,     18,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          57),
     byregotsMiracle: new Action(    'byregotsMiracle',      'Byregot\'s Miracle',   10,     10,  0.7, 1.0, 0.0, 'immediate',   1,  'All',          58),
-    trainedHand: new Action(        'trainedHand',          'Trained Hand',         10,     16,  1.0, 1.5, 1.5, 'immediate',   1,  'All',          58),
+    trainedHand: new Action(        'trainedHand',          'Trained Hand',         10,     16,  1.0, 1.5, 1.5, 'immediate',   1,  'All',          59),
 
     // Elemental Aspect Actions
     brandOfEarth: new Action(       'brandOfEarth',         'Brand of Earth',       10,      6,  0.9, 0.0, 1.0, 'immediate',   1,  'Leatherworker',37),
@@ -101,9 +101,9 @@ var AllActions = {
     focusedSynthesis: new Action(   'focusedSynthesis',     'Focused Synthesis',    10,      5,  0.5, 0.0, 2.0, 'immediate',   1,  'All',          67),
     focusedTouch: new Action(       'focusedTouch',         'Focused Touch',        10,     18,  0.5, 1.5, 0.0, 'immediate',   1,  'All',          68),
     initialPreparations: new Action('initialPreparations',  'Initial Preparations',  0,     50,  1.0, 0.0, 0.0, 'indefinite',  1,  'All',          69),
-    specialtyReinforce: new Action( 'specialtyReinforce',   'Specialty: Reinforce',  0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          70),
-    specialtyRefurbish: new Action( 'specialtyRefurbish',   'Specialty: Refurbish',  0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          70),
-    specialtyReflect: new Action(   'specialtyReflect',     'Specialty: Reflect',    0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          70),
+    specialtyReinforce: new Action( 'specialtyReinforce',   'Specialty: Reinforce',  0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          69),
+    specialtyRefurbish: new Action( 'specialtyRefurbish',   'Specialty: Refurbish',  0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          69),
+    specialtyReflect: new Action(   'specialtyReflect',     'Specialty: Reflect',    0,      0,  1.0, 0.0, 0.0, 'immediate',   1,  'All',          69),
     strokeOfGenius: new Action(     'strokeOfGenius',       'Stroke of Genius',      0,      0,  1.0, 0.0, 0.0, 'indefinite',  1,  'All',          70),
 
     // Special Actions - not selectable
